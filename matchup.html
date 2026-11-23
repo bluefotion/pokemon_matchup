@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeMatch | 1세대 151종 상성 &amp; 종족값 판독기</title>
+  <link rel="stylesheet" href="css/matchup.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>⚖️ PokeMatch · 1세대 151종 상성 &amp; 종족값 판독기</h1>
+    <p>관동지방 전국도감 No.001~No.151 포켓몬의 <strong>타입 상성</strong>과 <strong>6종족값</strong>만으로 유불리를 분석합니다</p>
+  </header>
+
+  <main class="container">
+    <!-- 1. 포켓몬 선택 영역 -->
+    <section class="selector-card">
+      <div class="selector-grid">
+        <div class="select-box">
+          <label for="my-search">🔵 내 포켓몬 (1세대 151종)</label>
+          <input type="text" id="my-search" class="search-input" placeholder="이름 또는 번호 검색 (예: 리자몽, 25)" />
+          <select id="my-select"></select>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" id="random-btn" class="btn btn-random">🎲 랜덤 대진</button>
+          <button type="button" id="swap-btn" class="btn btn-swap">⇄ 서로 바꾸기</button>
+        </div>
+
+        <div class="select-box">
+          <label for="opp-search">🔴 상대 포켓몬 (1세대 151종)</label>
+          <input type="text" id="opp-search" class="search-input" placeholder="이름 또는 번호 검색 (예: 거북왕, 150)" />
+          <select id="opp-select"></select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 종합 유불리 판정 결과 -->
+    <section class="verdict-box" id="verdict-box">
+      <span class="verdict-badge" id="verdict-badge">-</span>
+      <h2 class="verdict-title" id="verdict-title">-</h2>
+      <ul class="verdict-reasons" id="verdict-reasons"></ul>
+    </section>
+
+    <!-- 3. 양쪽 포켓몬 상세 비교 (상성 + 종족값) -->
+    <section class="compare-grid">
+      <article class="poke-panel" id="my-panel"></article>
+      <article class="poke-panel" id="opp-panel"></article>
+    </section>
+  </main>
+
+  <script src="js/matchup.js"></script>
+</body>
+</html>
